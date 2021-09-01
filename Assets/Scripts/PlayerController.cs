@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
         m_Life -= damage;
     }
 
-    void IncrementScore(int points)
+    public void IncrementScore(int points)
     {
         m_Score += points;
     }
