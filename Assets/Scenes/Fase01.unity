@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3c83607f519a8ca9263241f4b4481e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Life: 10
   m_isGrounded: 0
   m_groundLayer:
     serializedVersion: 2
@@ -422,6 +423,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c590152d9acc844298f044fe97d5ebd, type: 3}
+--- !u!1 &385138795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7224431249485275587, guid: 3a41851a171bdb24b89f0b7f5f5ee1d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 7224431248685289648}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &385138796
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385138795}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.19
+--- !u!95 &385138798
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385138795}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2f845b6808fe6dc43a7b782691649260, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &385138799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385138795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e02342e8e3854bf0a7053bbd488bd53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Damage: 3
 --- !u!1 &461394228
 GameObject:
   m_ObjectHideFlags: 0
@@ -6995,6 +7050,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Armadilha serra
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224431249485275588, guid: 3a41851a171bdb24b89f0b7f5f5ee1d3,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7224431249485275589, guid: 3a41851a171bdb24b89f0b7f5f5ee1d3,
         type: 3}

@@ -83,8 +83,9 @@ public class PlayerController : MonoBehaviour
         m_Anim.SetTrigger("jump");
     }
 
-    void DecrementLife(int damage)
+    public void DecrementLife(int damage)
     {
+        m_Anim.SetTrigger("hit");
         m_Life -= damage;
     }
 
