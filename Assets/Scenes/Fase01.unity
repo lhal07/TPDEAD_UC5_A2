@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 158948559}
   - component: {fileID: 158948561}
   - component: {fileID: 158948560}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Jogador
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3c83607f519a8ca9263241f4b4481e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Life: 10
   m_isGrounded: 0
   m_groundLayer:
     serializedVersion: 2
@@ -7242,6 +7243,16 @@ PrefabInstance:
     - target: {fileID: 270008523083582092, guid: 0431b0ad693dd5948ae9172b082ed6f0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270008523083582092, guid: 0431b0ad693dd5948ae9172b082ed6f0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275144350408821773, guid: 0431b0ad693dd5948ae9172b082ed6f0,
+        type: 3}
+      propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8224606553109372145, guid: 0431b0ad693dd5948ae9172b082ed6f0,

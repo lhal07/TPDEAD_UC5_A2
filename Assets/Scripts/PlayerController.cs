@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Animator m_Anim;
     private SpriteRenderer m_Sprite;
     private Vector3 m_RecPos;
-    private int m_Life = 10;
+    public int m_Life = 10;
     private int m_Score = 0;
     private bool m_toTheLeft;
     private bool m_toTheRight;

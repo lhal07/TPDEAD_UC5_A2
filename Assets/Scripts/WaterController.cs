@@ -34,7 +34,6 @@ public class WaterController : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             m_Timer += Time.deltaTime;
-            print("Player is under water\n");
             if (m_Timer >= m_TimeDamage)
             {
                 m_Player.DecrementLife(m_Damage);
