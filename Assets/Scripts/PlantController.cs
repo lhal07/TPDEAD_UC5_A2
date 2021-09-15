@@ -27,7 +27,7 @@ public class PlantController : MonoBehaviour
     {
         m_Timer += Time.deltaTime;
         m_PlayerVisible = false;
-        float distance = 5f;
+        float distance = 3f;
         RaycastHit2D sight = Physics2D.Raycast(transform.position, m_Direction, distance, m_PlayerMask);
         if (sight.collider != null) {
             m_PlayerVisible = sight.collider.CompareTag("Player");

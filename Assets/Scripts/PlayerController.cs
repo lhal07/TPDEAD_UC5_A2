@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D m_Rb2d;
     private Animator m_Anim;
     private SpriteRenderer m_Sprite;
+    private CanvasScript m_Canvas;
+    private HealthBarScript m_HealthBar;
     private Vector3 m_RecPos;
     public int m_Life = 10;
     private int m_Score = 0;
@@ -27,6 +29,8 @@ public class PlayerController : MonoBehaviour
         m_Rb2d = GetComponent<Rigidbody2D>();
         m_Sprite = GetComponent<SpriteRenderer>();
         m_RecPos = transform.position;
+        m_Canvas = (CanvasScript)FindObjectOfType(typeof(CanvasScript));
+        m_HealthBar = (HealthBarScript)FindObjectOfType(typeof(HealthBarScript));
     }
 
     void FixedUpdate()
@@ -74,6 +78,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && m_isGrounded) {
             Jump();
         }
+        if (OutOfBounds()) {
+            m_HealthBar.SetHealth(0);
+        }
         TestDefeatCondition();
     }
 
@@ -88,11 +95,18 @@ public class PlayerController : MonoBehaviour
     {
         m_Anim.SetTrigger("hit");
         m_Life -= damage;
+        m_HealthBar.SetHealth(m_Life);
     }
 
     public void IncrementScore(int points)
     {
         m_Score += points;
+        m_Canvas.SetScore(m_Score);
+    }
+
+    public int GetScore() {
+        print("GetScore" + m_Score.ToString());
+        return m_Score;
     }
 
     bool OutOfBounds()
