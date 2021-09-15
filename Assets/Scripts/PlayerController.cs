@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -96,7 +97,8 @@ public class PlayerController : MonoBehaviour
 
     bool OutOfBounds()
     {
-        float screenBottomLimit = Camera.main.ScreenToWorldPoint(new Vector2(0,0)).y;
+        float screenBottomOffset = -1;
+        float screenBottomLimit = Camera.main.ScreenToWorldPoint(new Vector2(0,screenBottomOffset)).y;
         return (transform.position.y <= screenBottomLimit);
     }
 
@@ -105,7 +107,7 @@ public class PlayerController : MonoBehaviour
         bool gameOver = (m_Life <= 0) || OutOfBounds();
 
         if (gameOver) {
-            print("Game Over");
+            SceneManager.LoadScene("Scenes/Fase01");
         }
     }
 }
