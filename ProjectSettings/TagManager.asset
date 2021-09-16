@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plataforma
   - Fruit
+  - Goal
   layers:
   - Default
   - TransparentFX

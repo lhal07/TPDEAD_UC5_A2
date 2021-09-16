@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask m_groundLayer;
     public float m_Speed = 0.5f;
     public float m_JumpForce = 5f;
+    private bool m_Victory = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,9 @@ public class PlayerController : MonoBehaviour
     float UpdateDirection()
     {
         float direction = Input.GetAxis("Horizontal");
+        if (m_Victory) {
+            direction = 0;
+        }
         m_toTheLeft = direction < 0;
         m_toTheRight = direction > 0;
         m_facingRight = transform.localScale.x > 0;
@@ -75,7 +79,7 @@ public class PlayerController : MonoBehaviour
         m_isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.2f, m_groundLayer);
         m_Anim.SetFloat("vertical",m_Rb2d.velocity.y);
         m_Anim.SetFloat("horizontal",Mathf.Abs(m_Rb2d.velocity.x));
-        if (Input.GetKeyDown(KeyCode.Space) && m_isGrounded) {
+        if (Input.GetKeyDown(KeyCode.Space) && m_isGrounded && !m_Victory) {
             Jump();
         }
         if (OutOfBounds()) {
@@ -124,4 +128,14 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("Scenes/Fase01");
         }
     }
+
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Goal")
+        {
+            m_Victory = true;
+            m_Canvas.SetVictory();
+        }
+    }
+
 }
